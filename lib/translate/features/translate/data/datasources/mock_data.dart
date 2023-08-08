@@ -1,0 +1,20 @@
+Map<String, dynamic> data = {
+  'french':{
+    'monday':'Lundi',
+    'tuesday':'Mardi',
+    'wednesday':'Mercredi',
+    'thursday':'Jeudi',
+    'friday':'Vendredi',
+    'saturday':'Samedi',
+    'sunday':'Dimanche',
+  },
+  'english':{
+    'lundi':'Monday',
+    'mardi':'Tuesday',
+    'mercredi':'Wednesday',
+    'jeudi':'Thursday',
+    'vendredi':'Friday',
+    'samedi':'Saturday',
+    'dimanche':'Sunday',
+  }
+};
