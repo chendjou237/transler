@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:transler/translate/features/translate/domain/translate_repository.dart';
 
 class TranslationPage extends StatefulWidget {
@@ -29,72 +28,74 @@ class _TranslationPageState extends State<TranslationPage> {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'Enter your text:',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text(
+                    'Enter your text:',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                TextFormField(
-                  controller: inputController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter your text',
+                  const SizedBox(
+                    height: 16,
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
-                  },
-                  maxLines: 5,
-                ),
-                const SizedBox(
-                  height: 32,
-                ),
-                const Text(
-                  'the translation:',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                  TextFormField(
+                    controller: inputController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter your text',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                    maxLines: 5,
                   ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.grey[200],
+                  const SizedBox(
+                    height: 32,
                   ),
-                  child: Text(
-                    outputs == '' ? "I'm waiting for your text" : outputs,
-                    textAlign: TextAlign.center,
+                  const Text(
+                    'the translation:',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 32,
-                ),
-                ElevatedButton(
-                  onPressed: _handleTranslate,
-                  child: const Text('Translate'),
-                )
-              ],
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Container(
+                    height: 100,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.grey[200],
+                    ),
+                    child: Text(
+                      outputs == '' ? "I'm waiting for your text" : outputs,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  ElevatedButton(
+                    onPressed: _handleTranslate,
+                    child: const Text('Translate'),
+                  )
+                ],
+              ),
             ),
           ),
         ),
