@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:transler/counter/counter.dart';
 import 'package:transler/l10n/l10n.dart';
 import 'package:transler/translate/features/translate/presentation/pages/translation_page.dart';
 
